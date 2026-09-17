@@ -1,9 +1,5 @@
 <!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
 		<title>TheAngelNduluo_Porfolio</title>
@@ -135,34 +131,33 @@
         }
 
         /* ===== FIX: Project section button clickability ===== */
-        .wrapper.style3 section {
+        /* Scoped ONLY to #main2 (the projects section) so banner/profile stay untouched */
+        #main2 section {
             overflow: visible;
         }
 
-        .wrapper.style3 .row > div > section {
+        #main2 .row > div > section {
             position: relative;
             z-index: 1;
         }
 
-        /* Ensure links inside project sections are fully clickable */
-        .wrapper.style3 section a.custom-button {
+        #main2 section a.custom-button {
             display: inline-block;
             position: relative;
             z-index: 9999;
             pointer-events: auto;
         }
 
-        /* Remove any pseudo-element overlays on sections */
-        .wrapper.style3 section::before,
-        .wrapper.style3 section::after,
-        .wrapper.style3 .row::before,
-        .wrapper.style3 .row::after {
+        #main2 section::before,
+        #main2 section::after,
+        #main2 .row::before,
+        #main2 .row::after {
             pointer-events: none;
         }
 
-        /* Theme wrapper stacking fix */
-        .wrapper > .inner,
-        .wrapper section > * {
+        /* Ensure the project section's inner content stacks above any overlay */
+        #main2 > header,
+        #main2 .row > div > section > * {
             position: relative;
         }
         /* ===== END FIX ===== */
