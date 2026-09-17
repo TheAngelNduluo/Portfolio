@@ -13,21 +13,62 @@
 			
 	</head>
 	<Style>
+	/* ===== BANNER: force full-width, centered layout ===== */
 	#banner {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: left;
+		display: block !important;
+		width: 100%;
+		text-align: center !important;
+	}
+
+	#banner .inner {
+		display: block !important;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto !important;
+		text-align: center !important;
 	}
 
 	.banner-content {
-		flex: 1;
+		display: block !important;
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto !important;
+		text-align: center !important;
+	}
+
+	.banner-content header {
+		text-align: center !important;
+	}
+
+	.banner-image {
+		display: block !important;
+		width: 100%;
+		text-align: center !important;
+		margin: 0 auto !important;
 	}
 
 	.banner-image img {
 		max-width: 300px;
+		width: 100%;
 		border-radius: 50%;
 		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		margin: 0 auto 20px auto !important;
+		display: block !important;
+	}
+
+	.banner-image p {
+		text-align: center !important;
+		margin: 0 auto !important;
+		max-width: 600px;
+	}
+
+	#banner footer {
+		text-align: center !important;
+	}
+
+	#banner .buttons.stacked {
+		display: inline-block;
+		margin: 0 auto;
 	}
 
 
@@ -131,6 +172,8 @@
         }
 
         /* ===== FIX: Project section button clickability ===== */
+        /* Scoped ONLY to the projects wrapper (.wrapper.style3) so it doesn't
+           affect the banner or any other section on the page. */
         .wrapper.style3 section {
             overflow: visible;
         }
@@ -148,7 +191,7 @@
             pointer-events: auto;
         }
 
-        /* Remove any pseudo-element overlays on sections */
+        /* Remove any pseudo-element overlays on project sections */
         .wrapper.style3 section::before,
         .wrapper.style3 section::after,
         .wrapper.style3 .row::before,
@@ -156,9 +199,9 @@
             pointer-events: none;
         }
 
-        /* Theme wrapper stacking fix */
-        .wrapper > .inner,
-        .wrapper section > * {
+        /* Theme wrapper stacking fix — scoped to style3 wrapper only */
+        .wrapper.style3 > .inner,
+        .wrapper.style3 section > * {
             position: relative;
         }
         /* ===== END FIX ===== */
